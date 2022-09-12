@@ -1,0 +1,66 @@
+.container {
+  margin-top: 1.6rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-input {
+    padding: 1rem 3rem !important;
+  }
+
+  .select-container {
+    width: 25% !important;
+  }
+  .search-select {
+    padding: 1rem 3rem !important;
+    width: 90% !important;
+  }
+}
+
+.input-container {
+  width: 100%;
+}
+.select-container {
+  width: 100%;
+}
+
+.search-input {
+  background-color: var(--elements-color);
+  font-size: 0.9rem;
+  color: var(--search-country-color);
+  margin: 1rem;
+  outline: none;
+  padding: 0.6rem 3rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  width: 80%;
+}
+
+.search-input::placeholder {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.search-select {
+  max-width: 240px;
+  font-weight: 600;
+  outline: none;
+  background-color: var(--elements-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+  padding: 0.6rem 3rem;
+  width: 60%;
+  margin: 0rem 1rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border: none;
+}

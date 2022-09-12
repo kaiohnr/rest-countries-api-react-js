@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
 
-function App() {
+import { Routes, Route } from 'react-router-dom';
+import Countries from './components/Countries';
+import NavBar from './components/NavBar';
+import CountryDetails from './routes/CountryDetails';
+import { Helmet } from 'react-helmet';
+import { ThemeContext } from './context/theme-context';
+
+const App = () => {
+  const themeContext = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={themeContext.theme}>
+      <Helmet>
+        <style>{`body { background-color: ${
+          themeContext.theme === 'light-theme' ? '#fafafa' : '#202c37'
+        } }`}</style>
+      </Helmet>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<Countries />} />
+
+        <Route path="/" element={<CountryDetails />}>
+          <Route path=":countryName" element={<CountryDetails />} />
+        </Route>
+        
+      </Routes>
     </div>
+    
   );
-}
+};
 
 export default App;

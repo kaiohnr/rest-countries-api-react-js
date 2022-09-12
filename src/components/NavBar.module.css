@@ -1,0 +1,43 @@
+.nav-bar {
+  background-color: var(--elements-color);
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav--bar__container {
+  box-shadow: 1px 6px 28px -12px rgba(0, 0, 0, 0.07);
+}
+
+.nav-bar h1 {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.theme-toggler {
+  color: var(--text-color);
+  display: flex;
+  flex: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.theme-toggler p {
+  font-weight: 600;
+}
+
+.theme-btn {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-bar h1 {
+    font-size: 1.6rem;
+  }
+
+  .theme-toggler p {
+    font-size: 1.3rem;
+  }
+}
